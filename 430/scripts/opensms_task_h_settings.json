@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "executionMode": "explicit-current-user-only",
+  "dailyDispatchLimit": 150,
+  "dailySendAmount": 130
+}

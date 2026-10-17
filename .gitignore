@@ -1,0 +1,38 @@
+# Local dependencies and generated Python files
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+credentials.json
+credentials.*.json
+storage_state.json
+storage-state.json
+*.pem
+*.key
+
+# Business data, generated reports, and local runtime state
+opensms_artifacts/
+opensms_runs/
+outputs/
+recovery-records/
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.log
+.DS_Store
+.BC.T_*
+/430/inputs/selected_phones_*.txt
+/shared/cloakbrowser_free_test/*.png
+/shared/cloakbrowser_free_test/receipt.json
+/shared/cloakbrowser_free_test/binding_receipt.json
+/shared/cloakbrowser_free_test/login_browser_status.json

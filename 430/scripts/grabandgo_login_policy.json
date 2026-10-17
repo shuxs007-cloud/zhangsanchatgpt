@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "enabled": true,
+  "authorization": "current-user-standing-grab-login-on-authentication-failure",
+  "credentialStore": "local-non-synchronizable-macos-keychain",
+  "loginOrigin": "https://www.grabandgoplus.com",
+  "maxRecoveryLoginPreflight": 1,
+  "allowMissingQueryPage": true,
+  "recoveryTransport": "existing-bitbrowser-430-context-request",
+  "continueCurrentTaskAfterVerifiedLogin": true,
+  "cookieHandling": "existing-context-no-cookie-export",
+  "queryBeforeVerifiedLogin": false,
+  "replayFailedJobs": false
+}

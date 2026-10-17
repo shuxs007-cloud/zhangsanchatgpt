@@ -1,0 +1,39 @@
+✔ uses the new admin origin (0.383167ms)
+✔ reads plaintext JSON without attempting decryption (1.069208ms)
+✔ reads both quoted and unquoted encrypted responses (0.572458ms)
+✔ preserves UTF-8 text and large string identifiers (0.113208ms)
+✔ reports HTTP 401 before trying to parse or decrypt the body (0.174ms)
+✔ reports HTTP 403 before trying to parse or decrypt the body (0.043792ms)
+✔ reports HTTP 404 before trying to parse or decrypt the body (0.037083ms)
+✔ reports HTTP 500 before trying to parse or decrypt the body (0.066709ms)
+✔ rejects login and challenge HTML even with HTTP 200 (0.089333ms)
+✔ rejects business authentication failures, including encrypted ones (0.152875ms)
+✔ rejects malformed, empty, or unexpected responses (0.119708ms)
+✔ decryption errors do not expose ciphertext or key material (0.163959ms)
+✔ separators and deduplication (1.642875ms)
+✔ B12 never selects B12V (0.112917ms)
+✔ A1 never selects A11 (0.101166ms)
+✔ carrier ambiguity fails (0.050958ms)
+✔ account fuzzy matching forbidden (0.067541ms)
+✔ case insensitive exact account (0.053292ms)
+✔ duplicate account fails (0.044083ms)
+✔ additive retains old ID (0.103125ms)
+✔ replacing old ID fails additive verification (0.050416ms)
+✔ keep-only catches extras and missing (0.083542ms)
+✔ keep-only catches duplicate relationships (0.048375ms)
+✔ source-target coverage deduplicates (0.05325ms)
+✔ batch preserves large IDs as strings (0.319417ms)
+✔ unsafe numeric batch ID rejected (0.0675ms)
+✔ duplicate batch rejected (0.057958ms)
+✔ cancellation cannot run before 13:00 or wrong day (0.131167ms)
+✔ Beijing timezone deterministic (29.159ms)
+✔ current manual and automatic presets (1.491542ms)
+✔ CLI preview, mutation, independent readback and duplicate request protection (411.305917ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 499.897833

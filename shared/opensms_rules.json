@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "origin": "https://adminsms.smsoug.com",
+  "browserId": "a53ce74e6c9e4fa08aec35f81ce1e2a3",
+  "defaults": {"silent": true, "strictMatch": true, "serial": true, "minIntervalMs": 2000, "blockedCooldownMs": 30000, "independentReadback": true},
+  "presets": {
+    "jingliao": {"kind": "add-users", "targets": ["A1", "A12", "B1", "B11", "B12", "B1V", "B11V", "B12V"]},
+    "a3-only": {"kind": "only-group", "sources": ["A3"], "targets": ["A3", "B1", "B11", "B12", "B3"]},
+    "c2-only": {"kind": "only-group", "sources": ["C2"], "targets": ["C2"]},
+    "stock": {"kind": "add-users", "targets": ["A2", "A21"]},
+    "b1-b12": {"kind": "add-groups", "sources": ["B1"], "targets": ["B12"]}
+  },
+  "automaticB12": {
+    "sources": ["A3", "B1", "B11", "B3"],
+    "target": "B12",
+    "thresholdStrictlyBelow": 0.1,
+    "formula": "sum(dailyRemaining) / sum(dailyTotal)",
+    "timezone": "Asia/Shanghai",
+    "writeStart": "01:00:00",
+    "writeEnd": "10:00:00",
+    "cancelTime": "13:00:00",
+    "cancelScope": "new exact binding IDs only",
+    "scheduler": "requires separately verified external heartbeat; this package creates no timers"
+  },
+  "disabledHistoricalRules": ["A3 alone -> A1/A11", "A3+B1+B11 without B3", "daily 18:00 cleanup", "offlineRecover"],
+  "notes": "Presets run only when explicitly selected. Past one-off account edits are not recurring policies. Latest explicit request overrides a preset."
+}

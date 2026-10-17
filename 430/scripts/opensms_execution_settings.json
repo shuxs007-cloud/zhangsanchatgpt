@@ -1,0 +1,5 @@
+{
+  "browser": "cloakbrowser",
+  "requestCompletionGapMs": 1000,
+  "requestConcurrency": 1
+}

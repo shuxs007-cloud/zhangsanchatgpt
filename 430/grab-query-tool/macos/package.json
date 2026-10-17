@@ -1,0 +1,11 @@
+{
+  "name": "grab-local-query-macos",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone local Grab ICCID query tool for macOS",
+  "engines": {"node": ">=24"},
+  "dependencies": {"playwright-core": "1.62.1", "exceljs": "4.4.0"},
+  "overrides": {"exceljs": {"uuid": "11.1.1"}},
+  "scripts": {"start": "node launch.mjs", "check": "node selfcheck.mjs"}
+}

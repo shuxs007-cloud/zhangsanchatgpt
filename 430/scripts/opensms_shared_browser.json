@@ -1,0 +1,11 @@
+{
+  "displayName": "OpenSMS 共用浏览器",
+  "browser": "cloakbrowser",
+  "sessionState": "/Users/zhangsan/Downloads/430/opensms_artifacts/state/new_browser/status.json",
+  "loginEntrypoint": "/Users/zhangsan/Downloads/430/scripts/opensms_new_browser.mjs",
+  "siteLockKey": "a53ce74e6c9e4fa08aec35f81ce1e2a3",
+  "workflows": ["10日报表巡检", "运营商绑定", "设备监控一键维护"],
+  "separateBrowserLaunchAllowed": false,
+  "credentialScope": "OpenSMS AdminToken only",
+  "taskF": "existing BitBrowser 430 Grab&Go session; not shared with OpenSMS"
+}

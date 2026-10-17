@@ -1,0 +1,11 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {Store} from './lib/store.mjs';
+const [receiptFile,reportFile]=process.argv.slice(2);
+if(!receiptFile||!reportFile)throw new Error('Usage: import-history.mjs RECEIPT.json REPORT.xlsx');
+const receipt=JSON.parse(await fs.readFile(receiptFile,'utf8'));
+if(receipt.status!=='complete'||receipt.results.length!==receipt.uniqueIccids)throw new Error('只导入已完整完成的查询记录');
+await fs.access(reportFile);
+const store=await new Store('/Users/zhangsan/Downloads/430/opensms_artifacts/state/grab-query-tool/jobs').init();
+const job=await store.importReceipt(receipt,{path:path.resolve(reportFile),filename:path.basename(reportFile),completed:receipt.results.length,status:'completed',createdAt:receipt.finishedAt});
+console.log(JSON.stringify({id:job.id,imported:job.results.length}));

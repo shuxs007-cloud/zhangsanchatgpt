@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "enabled": true,
+  "authorization": "current-user-standing-task-a-new-f-file",
+  "authorizedOn": "2026-10-03",
+  "scope": "current_task_a_system_missing_f_dates",
+  "allowEmpty": false,
+  "allowHistoricalFiles": false,
+  "overwriteExistingConflictingDates": false,
+  "retrySubmission": false
+}

@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+if command -v node >/dev/null 2>&1; then
+  NODE=$(command -v node)
+elif [ -x "$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node" ]; then
+  NODE="$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+else
+  printf '%s\n' 'Node.js runtime not found. Install Node.js 22+.' >&2
+  exit 1
+fi
+exec "$NODE" "$ROOT/opensms_ops.mjs" "$@"

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "effectiveDate": "2026-10-16",
+  "source": "current-user",
+  "rooms": [
+    {"name": "二號機房", "label": "2号机房", "deviceRanges": [[101, 121]], "deviceCount": 21},
+    {"name": "三號機房", "label": "3号机房", "deviceRanges": [[201, 241]], "deviceCount": 41},
+    {"name": "五號機房", "label": "5号机房", "deviceRanges": [[68, 71], [151, 173]], "deviceCount": 27},
+    {"name": "六號機房", "label": "6号机房", "deviceRanges": [[130, 149], [174, 192], [194, 195]], "deviceCount": 41},
+    {"name": "七號機房", "label": "7号机房", "deviceRanges": [[94, 100]], "deviceCount": 7}
+  ],
+  "totalDeviceCount": 137
+}

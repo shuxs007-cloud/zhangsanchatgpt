@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "tasks": ["D", "E"],
+  "endpoint": "/phone/config/batchSetChatExpire",
+  "completionGapMs": 5000,
+  "retryHttpStatus": 502,
+  "maxAttempts": 3,
+  "retryDelayMs": [60000, 120000],
+  "maxRetryAfterMs": 900000
+}

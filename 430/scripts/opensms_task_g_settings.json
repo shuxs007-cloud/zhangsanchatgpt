@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "enabled": true,
+  "previousDayTotalSendThresholdExclusive": 160,
+  "excludedEntryOprTokens": ["Kini"],
+  "restNaturalDays": 1,
+  "sourceGroups": ["B1", "B11", "B12", "B1V", "B11V", "B12V"],
+  "standardRestCarrier": "周末休息区T",
+  "vRestCarrier": "周末休息区TV"
+}

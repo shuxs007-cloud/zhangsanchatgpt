@@ -1,0 +1,23 @@
+import fs from 'node:fs/promises';
+import {Workbook, SpreadsheetFile} from '@oai/artifact-tool';
+const [input, output, preview] = process.argv.slice(2);
+const payload = JSON.parse(await fs.readFile(input, 'utf8'));
+const wb = Workbook.create();
+const sheet = wb.worksheets.add('系统缺激活_库有日期');
+const width = payload.headers.length;
+const timeColumn=payload.headers.indexOf('F库查询时间');
+const values=payload.rows.map(row=>row.map((value,index)=>index===timeColumn && value ? new Date(value) : value));
+sheet.getRangeByIndexes(0,0,payload.rows.length+1,width).values = [payload.headers,...values];
+const range = sheet.getRangeByIndexes(0,0,payload.rows.length+1,width);
+range.format.font = {name:'Arial',size:10};
+range.format.rowHeight = 22;
+range.format.columnWidth = 20;
+sheet.getRangeByIndexes(0,0,1,width).format = {fill:'#D9EAF7',font:{bold:true,color:'#000000'},wrapText:true,rowHeight:40};
+for (const column of payload.textColumns) sheet.getRangeByIndexes(1,column,Math.max(1,payload.rows.length),1).setNumberFormat('@');
+sheet.getRangeByIndexes(1,timeColumn,Math.max(1,payload.rows.length),1).setNumberFormat('yyyy-mm-dd hh:mm:ss.000');
+sheet.freezePanes.freezeRows(1);
+sheet.showGridLines = false;
+console.log((await wb.inspect({kind:'region',sheetId:sheet.name,range:'A1:H5',maxChars:1200})).ndjson);
+console.log((await wb.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|#NAME\\?|#NUM!|#SPILL!',options:{useRegex:true,maxResults:10},maxChars:1000})).ndjson);
+if(preview){ const blob=await wb.render({sheetName:sheet.name,range:'A1:H8',scale:1.5,format:'png'}); await fs.writeFile(preview,new Uint8Array(await blob.arrayBuffer())); }
+await (await SpreadsheetFile.exportXlsx(wb)).save(output);

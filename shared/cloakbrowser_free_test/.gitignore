@@ -1,0 +1,4 @@
+private-session/
+.venv/
+node_modules/
+login_browser.log

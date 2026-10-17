@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "externalVolume": "/Volumes/zs01",
+  "externalVolumeUuid": "013FA99B-C153-3D70-93A2-37D801ACFD6A",
+  "bulkRoot": "/Volumes/zs01/chatgpt/OpenSMS/local-work",
+  "downloadRoot": "/Volumes/zs01/430",
+  "deliveryRoot": "/Volumes/zs01/chatgpt/OpenSMS",
+  "localCoreRoot": "/Users/zhangsan/Downloads/430",
+  "missingVolumeAction": "stop_before_network",
+  "coreDataRemainLocal": true
+}

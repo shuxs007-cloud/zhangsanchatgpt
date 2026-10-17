@@ -1,0 +1,9 @@
+{
+  "name": "opensms-cloakbrowser-readonly-test",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "cloakbrowser": "0.5.11",
+    "playwright-core": "file:/Users/zhangsan/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core"
+  }
+}
